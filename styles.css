@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+body {
+    overflow-x: hidden;
+}
+header {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0,0,0), rgba(0,0,0,.7)), url("./background.jpg");
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+header .header-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6vh 6vw;
+    background: transparent;
+}
+header .header-wrapper.visible {
+    position: fixed;
+    width: 100%;
+    background: black;
+    animation: slideDown .4s forwards;
+}
+header .header-wrapper.hidden {
+    position: fixed;
+    width: 100%;
+    background: black;
+    animation: slideUp .4s;
+}
+@keyframes slideDown {
+    0% {
+        transform: translateY(-80vh);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes slideUp {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-80vh);
+    }
+}
+header .title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .title h2 {
+    color: white;
+    cursor: pointer;
+}
+header .header-navigation {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .header-navigation a {
+    position: relative;
+    color: rgb(76, 76, 76);
+    text-decoration: none;
+    transition: color .4s;
+}
+header .header-navigation a:first-child {
+    margin-right: 2vw;
+}
+header .header-navigation a:last-child {
+    margin-left: 2vw;
+}
+header .header-navigation a:hover {
+    color: white;
+}
+header .header-navigation a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: purple;
+    left: 0;
+    bottom: -6px;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transition: transform .4s;
+    transform-origin: right;
+}
+header .header-navigation a:hover::after {
+    transform: scaleX(1);
+    transform-origin: right;
+}
+/*header .conn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .conn button {
+    position: relative;
+    width: 110px;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform .4s;
+}
+header .conn #register {
+    margin-right: 20px;
+    background: rgb(28, 28, 28);
+    border: 1px solid white;
+    color: white;
+}
+header .conn #login {
+    background: white;
+    border: 1px solid purple;
+    color: black;
+    transition: .4s;
+}
+header .conn #login:hover {
+    background: purple;
+    border: 1px solid white;
+    color: white;
+}
+header .conn button:hover {
+    transform: scale(1.05);
+}*/
